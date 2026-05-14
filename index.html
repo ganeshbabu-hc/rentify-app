@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rentify Home</title>
+    <style>
+      :root {
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --muted: #9aa4af;
+        --card: #161b22;
+        --border: rgba(255, 255, 255, 0.12);
+        --primary: #fb8c00;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+          Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top right, rgba(251, 140, 0, 0.16), transparent 42%),
+          radial-gradient(circle at bottom left, rgba(255, 204, 128, 0.1), transparent 40%),
+          var(--bg);
+      }
+      .wrap {
+        width: min(1024px, 92vw);
+        margin: 0 auto;
+        padding: 32px 0 56px;
+      }
+      .hero {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+      }
+      h1 { margin: 0 0 8px; font-size: 2.2rem; }
+      p { margin: 0; line-height: 1.65; }
+      .muted { color: var(--muted); }
+      .grid {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 14px;
+      }
+      .item {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px;
+      }
+      .item h2 {
+        margin: 0 0 8px;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+      .item p { color: var(--muted); }
+      .footer {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <h1>Rentify</h1>
+        <p class="muted">
+          Property management app for owners and landlords.
+        </p>
+        <p style="margin-top: 8px;">
+          Manage properties, units, tenants, billing, reminders, reports, and backups.
+        </p>
+      </section>
+
+      <section class="grid">
+        <a class="item" href="https://ganeshbabu-hc.github.io/rentify-help/">
+          <h2>Help Center</h2>
+          <p>Detailed user guide, setup instructions, and feature walkthroughs.</p>
+        </a>
+        <a class="item" href="https://ganeshbabu-hc.github.io/rentify-privacy/">
+          <h2>Privacy Policy</h2>
+          <p>How Rentify collects, uses, stores, and protects your data.</p>
+        </a>
+        <a class="item" href="https://ganeshbabu-hc.github.io/rentify-terms/">
+          <h2>Terms & Conditions</h2>
+          <p>Rules, billing terms, responsibilities, and legal usage conditions.</p>
+        </a>
+      </section>
+
+      <p class="footer">
+        © 2026 Rentify. All rights reserved.
+      </p>
+    </main>
+  </body>
+</html>
