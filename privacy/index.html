@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rentify Privacy & Compliance</title>
+    <meta
+      name="description"
+      content="Privacy Policy and compliance information for the Rentify mobile app."
+    />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/app-icon.png" />
+    <style>
+      :root {
+        --bg: #0b0b0b;
+        --surface: #151515;
+        --card: #191919;
+        --card-soft: #262626;
+        --text: #f5f5f5;
+        --muted: #b9b9b9;
+        --border: rgba(255, 255, 255, 0.12);
+        --primary: #ff9800;
+        --secondary: #ffcc80;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .wrap {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 0 0 72px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px 0;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        font-weight: 800;
+      }
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
+      }
+      .brand-copy strong {
+        display: block;
+        font-size: 18px;
+        line-height: 1.05;
+      }
+      .brand-copy span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.25;
+        margin-top: 2px;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .links a {
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 15px 28px;
+        background: rgba(255, 255, 255, 0.04);
+        font-size: clamp(18px, 2vw, 28px);
+        font-weight: 500;
+        line-height: 1;
+      }
+      .hero {
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 152, 0, 0.12);
+        color: var(--secondary);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: clamp(32px, 5vw, 52px);
+        line-height: 1.05;
+        margin: 16px 0 12px;
+      }
+      .hero p {
+        max-width: 760px;
+        color: var(--muted);
+        font-size: 18px;
+        margin: 0;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .meta span {
+        background: var(--card-soft);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 22px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 24px;
+      }
+      h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+      p, li {
+        color: var(--muted);
+        font-size: 16px;
+      }
+      ul {
+        margin: 10px 0 0;
+        padding-left: 20px;
+      }
+      a {
+        color: var(--secondary);
+      }
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+      }
+      @media (max-width: 640px) {
+        .wrap { width: min(100% - 20px, 1120px); }
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .hero, .card { padding: 20px; border-radius: 20px; }
+        .hero p, p, li { font-size: 15px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-icon" src="../assets/app-icon.png" alt="Rentify app icon" />
+          <div class="brand-copy">
+            <strong>Rentify</strong>
+            <span>Property management app</span>
+          </div>
+        </div>
+        <nav class="links" aria-label="Rentify pages">
+          <a href="../#features">Features</a>
+          <a href="../help/">Help</a>
+          <a href="./">Privacy</a>
+          <a href="../terms/">Terms</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <span class="eyebrow">Rentify Mobile App</span>
+        <h1>Privacy Policy & Compliance</h1>
+        <p>
+          This page explains how Rentify collects, stores, uses, and protects user data,
+          and how the app handles backups, authentication, billing, and user-provided
+          property management information.
+        </p>
+        <div class="meta">
+          <span>Effective date: May 1, 2026</span>
+          <span>App package: com.smartlife.rentify</span>
+          <span>Publisher: ganeshbabu-hc</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>1. What Rentify Is</h2>
+          <p>
+            Rentify is a property management app used to manage owners, properties, rent units,
+            tenants, billing, reminders, reports, notes, backups, and maintenance workflows.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>2. Information You Provide</h2>
+          <ul>
+            <li>Owner, property, rent unit, tenant, and billing records</li>
+            <li>Tenant contact information, emergency numbers, and permanent address</li>
+            <li>Owner bank details, UPI details, and PAN details</li>
+            <li>Notes, reminders, maintenance requests, recurring finance entries, and bill history</li>
+            <li>Images such as profile pictures or property/rent unit display pictures</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>3. Authentication & Identity</h2>
+          <p>
+            Rentify may allow sign-in with Google. When Google sign-in is used, the app may access
+            basic profile information such as your name, email address, and profile image in order
+            to personalize the app experience and support Google-connected features such as Drive backup.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>4. Storage & Backup</h2>
+          <p>
+            Rentify stores app data locally on the device. If the user enables backup features,
+            backup files may also be stored in local device storage and/or in the user’s Google Drive,
+            depending on the backup option selected by the user.
+          </p>
+          <ul>
+            <li>Local backups may include structured app data and image references or copied assets</li>
+            <li>Google Drive backup is initiated only when the user explicitly connects and uses it</li>
+            <li>Restore actions are initiated by the user</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>5. Purchases</h2>
+          <p>
+            Rentify may offer Premium features through Google Play Billing. Purchase validation and
+            entitlement state may rely on Google Play purchase information such as product id, order id,
+            purchase token, purchase time, and acknowledgement state.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>6. How Data Is Used</h2>
+          <ul>
+            <li>To operate the property management features inside the app</li>
+            <li>To generate invoices, reports, reminders, and payment history</li>
+            <li>To support backup, restore, and sync-like flows selected by the user</li>
+            <li>To determine Premium access when a Premium purchase exists</li>
+            <li>To improve app stability and maintain expected product behavior</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>7. Data Sharing</h2>
+          <p>
+            Rentify does not sell personal data. Data may be processed by platform services used by the app,
+            such as Google Sign-In, Google Drive, and Google Play Billing, only when the user chooses to use
+            those features.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>8. User Control</h2>
+          <ul>
+            <li>Users can edit or delete many records directly within the app</li>
+            <li>Users can reset selected app data using the app’s reset tools</li>
+            <li>Users can create, delete, and restore backup files based on available app features</li>
+            <li>Users can disconnect Google features where supported by the app</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>9. Children</h2>
+          <p>
+            Rentify is not intended for children. It is designed for property management and administrative use.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>10. Security</h2>
+          <p>
+            Reasonable efforts are made to protect locally stored information and user-initiated backups.
+            However, no storage or transmission method can be guaranteed to be completely secure.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>11. Changes to This Policy</h2>
+          <p>
+            This page may be updated from time to time to reflect feature, compliance, or operational changes.
+            The effective date at the top of this page reflects the latest published version.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>12. Contact</h2>
+          <p>
+            For questions about this policy or the app, please contact the publisher through the
+            <a href="https://github.com/ganeshbabu-hc/rentify/issues">Rentify GitHub repository issues page</a>.
+          </p>
+        </article>
+      </section>
+
+      <p class="footer">
+        Rentify Privacy Policy & Compliance Page
+      </p>
+    </main>
+  </body>
+</html>
