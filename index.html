@@ -240,23 +240,48 @@
       }
       .billing-band {
         display: grid;
-        grid-template-columns: minmax(270px, 0.82fr) minmax(0, 1fr);
-        gap: 28px;
+        grid-template-columns: minmax(220px, 0.46fr) minmax(0, 1fr);
+        gap: 30px;
         align-items: center;
-        background: linear-gradient(135deg, #d71919, #ff9800);
-        border-radius: 14px;
-        padding: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 152, 0, 0.2);
+        background:
+          radial-gradient(circle at 12% 10%, rgba(255, 152, 0, 0.18), transparent 30%),
+          linear-gradient(145deg, rgba(255, 87, 34, 0.2), rgba(255, 152, 0, 0.08)),
+          var(--card);
+        border-radius: 28px;
+        padding: 26px;
         color: #fff;
       }
+      .billing-preview {
+        position: relative;
+        justify-self: center;
+        width: min(100%, 330px);
+      }
+      .billing-preview::before {
+        content: "";
+        position: absolute;
+        inset: 18px -18px -18px 18px;
+        border-radius: 26px;
+        background: linear-gradient(135deg, rgba(255, 152, 0, 0.3), rgba(215, 25, 25, 0.2));
+        filter: blur(2px);
+      }
       .billing-band img {
+        position: relative;
         width: 100%;
-        border-radius: 10px;
+        max-height: 430px;
+        object-fit: cover;
+        object-position: top center;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
         box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
       }
       .billing-band h2 {
         color: #fff;
+        max-width: 720px;
       }
       .billing-band p {
+        max-width: 760px;
         color: rgba(255, 255, 255, 0.88);
       }
       .legal-grid {
@@ -447,10 +472,12 @@
 
       <section class="section">
         <div class="billing-band">
-          <img
-            src="./assets/screens/rentify_intro_2.png"
-            alt="Rentify calculated monthly bill preview"
-          />
+          <div class="billing-preview">
+            <img
+              src="./assets/screens/rentify_intro_2.png"
+              alt="Rentify calculated monthly bill preview"
+            />
+          </div>
           <div>
             <h2>Built around the monthly rent cycle</h2>
             <p class="section-copy">
