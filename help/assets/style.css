@@ -244,6 +244,11 @@ img { max-width: 100%; display: block; }
   gap: 16px;
   font-size: 17px;
   font-weight: 600;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+.accordion-header:hover {
+  color: var(--secondary);
 }
 .accordion-header [data-icon] {
   display: inline-flex;
