@@ -105,11 +105,8 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 78px;
   align-self: start;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: var(--shadow);
+  border-right: 1px solid var(--border);
+  padding: 4px 18px 4px 0;
 }
 .sidebar h2 {
   margin: 0 0 10px;
@@ -145,11 +142,8 @@ img { max-width: 100%; display: block; }
   gap: 18px;
 }
 .hero {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: 28px;
-  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0 28px;
 }
 .eyebrow {
   display: inline-block;
@@ -186,11 +180,8 @@ img { max-width: 100%; display: block; }
   font-size: 13px;
 }
 .card, .section-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 22px;
-  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
+  padding: 4px 0 24px;
 }
 .card-grid {
   display: grid;
@@ -237,10 +228,9 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 .accordion-item {
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
-  background: rgba(255,255,255,0.02);
+  background: transparent;
 }
 .accordion-header {
   width: 100%;
@@ -248,7 +238,7 @@ img { max-width: 100%; display: block; }
   background: transparent;
   color: var(--text);
   border: 0;
-  padding: 16px 18px;
+  padding: 16px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -262,7 +252,7 @@ img { max-width: 100%; display: block; }
 }
 .accordion-panel {
   display: none;
-  padding: 0 18px 18px;
+  padding: 0 0 18px;
 }
 .accordion-item.open .accordion-panel { display: block; }
 .accordion-panel p,
@@ -281,10 +271,9 @@ img { max-width: 100%; display: block; }
 }
 .pager a {
   flex: 1 1 220px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 14px 16px;
-  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  background: transparent;
 }
 .pager strong {
   display: block;
@@ -307,7 +296,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 720px) {
   .layout, .topbar-inner { width: min(100%, calc(100% - 16px)); }
-  .hero, .card, .section-card { padding: 18px; border-radius: 20px; }
+  .hero, .card, .section-card { padding: 8px 0 22px; }
   .card-grid { grid-template-columns: 1fr; }
   .hero p { font-size: 15px; }
   .card h2, .section-card h2 { font-size: 22px; }
