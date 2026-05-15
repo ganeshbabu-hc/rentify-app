@@ -344,7 +344,7 @@ img { max-width: 100%; display: block; }
   .menu-toggle { display: inline-flex; }
 }
 @media (max-width: 720px) {
-  .layout, .topbar-inner { width: min(100%, calc(100% - 16px)); }
+  .layout, .topbar-inner { width: min(100%, calc(100% - 32px)); }
   .page-intro, .doc-block, .doc-section { padding: 8px 0 22px; }
   .doc-grid { grid-template-columns: 1fr; }
   .page-intro p { font-size: 15px; }
