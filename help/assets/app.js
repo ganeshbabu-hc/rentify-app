@@ -40,8 +40,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('[data-menu-toggle]');
   const sidebar = document.querySelector('[data-sidebar]');
   if (toggle && sidebar) {
+    const closeMenu = () => {
+      sidebar.classList.remove('open');
+      document.body.classList.remove('help-menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
     toggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
+      const isOpen = sidebar.classList.toggle('open');
+      document.body.classList.toggle('help-menu-open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    sidebar.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', event => {
+      if (!sidebar.classList.contains('open')) {
+        return;
+      }
+
+      const target = event.target;
+      if (target instanceof Node && !sidebar.contains(target) && !toggle.contains(target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
     });
   }
 });
