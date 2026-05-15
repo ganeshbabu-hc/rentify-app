@@ -141,7 +141,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   gap: 18px;
 }
-.hero {
+.page-intro {
   padding: 10px 0 18px;
 }
 .eyebrow {
@@ -154,23 +154,23 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.hero h1 {
+.page-intro h1 {
   margin: 14px 0 10px;
   font-size: clamp(30px, 4vw, 48px);
   line-height: 1.05;
 }
-.hero p {
+.page-intro p {
   margin: 0;
   color: var(--muted);
   font-size: 17px;
 }
-.hero-meta {
+.page-intro-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
 }
-.hero-meta span {
+.page-intro-meta span {
   padding: 8px 12px;
   border-radius: 999px;
   background: var(--card-soft);
@@ -178,16 +178,16 @@ img { max-width: 100%; display: block; }
   color: var(--muted);
   font-size: 13px;
 }
-.card, .section-card {
+.doc-block, .doc-section {
   border-bottom: 1px solid var(--border);
   padding: 4px 0 24px;
 }
-.card-grid {
+.doc-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
-.card h2, .section-card h2 {
+.doc-block h2, .doc-section h2 {
   margin: 0 0 10px;
   font-size: 24px;
   line-height: 1.15;
@@ -295,9 +295,9 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 720px) {
   .layout, .topbar-inner { width: min(100%, calc(100% - 16px)); }
-  .hero, .card, .section-card { padding: 8px 0 22px; }
-  .card-grid { grid-template-columns: 1fr; }
-  .hero p { font-size: 15px; }
-  .card h2, .section-card h2 { font-size: 22px; }
+  .page-intro, .doc-block, .doc-section { padding: 8px 0 22px; }
+  .doc-grid { grid-template-columns: 1fr; }
+  .page-intro p { font-size: 15px; }
+  .doc-block h2, .doc-section h2 { font-size: 22px; }
   .accordion-header { font-size: 16px; }
 }
