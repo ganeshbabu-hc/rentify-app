@@ -245,15 +245,31 @@ img { max-width: 100%; display: block; }
   font-size: 17px;
   font-weight: 600;
 }
-.accordion-header span:last-child {
+.accordion-header [data-icon] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--secondary);
-  font-size: 20px;
+  font-size: 28px;
+  line-height: 1;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 220ms ease, color 220ms ease;
+}
+.accordion-item.open .accordion-header [data-icon] {
+  transform: rotate(90deg);
 }
 .accordion-panel {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  transition: max-height 260ms ease, opacity 220ms ease, padding 220ms ease;
+}
+.accordion-item.open .accordion-panel {
+  opacity: 1;
   padding: 0 0 18px;
 }
-.accordion-item.open .accordion-panel { display: block; }
 .accordion-panel p,
 .accordion-panel li { color: var(--muted); font-size: 15px; }
 .footer {
