@@ -111,7 +111,7 @@
         grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.78fr);
         align-items: center;
         gap: 28px;
-        min-height: 78vh;
+        min-height: 62vh;
         padding: 26px 0 34px;
       }
       .eyebrow {
@@ -148,8 +148,9 @@
       }
       .hero-shot {
         width: 100%;
-        max-height: 720px;
+        max-height: min(520px, 62vh);
         object-fit: contain;
+        justify-self: end;
         filter: drop-shadow(0 28px 50px rgba(0, 0, 0, 0.5));
       }
       .section {
@@ -286,7 +287,8 @@
           padding-top: 8px;
         }
         .hero-shot {
-          max-height: none;
+          max-height: 560px;
+          justify-self: center;
         }
       }
       @media (max-width: 640px) {
