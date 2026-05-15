@@ -142,8 +142,7 @@ img { max-width: 100%; display: block; }
   gap: 18px;
 }
 .hero {
-  border-bottom: 1px solid var(--border);
-  padding: 10px 0 28px;
+  padding: 10px 0 18px;
 }
 .eyebrow {
   display: inline-block;
