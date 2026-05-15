@@ -91,6 +91,11 @@
         font-size: 14px;
         line-height: normal;
       }
+      .links a.active {
+        border-color: rgba(255, 152, 0, 0.48);
+        background: rgba(255, 152, 0, 0.16);
+        color: var(--secondary);
+      }
       .button-link {
         text-decoration: none;
         border: 1px solid var(--border);
@@ -316,7 +321,7 @@
           </div>
         </div>
         <nav class="links" aria-label="Rentify pages">
-          <a href="#features">Features</a>
+          <a class="active" href="#features">Features</a>
           <a href="./help/">Help</a>
           <a href="./privacy/">Privacy Policy</a>
           <a href="./terms/">Terms & Conditions</a>
