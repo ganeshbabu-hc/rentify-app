@@ -3,105 +3,278 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rentify Home</title>
+    <title>Rentify - Property Management App</title>
+    <meta
+      name="description"
+      content="Rentify helps property owners manage properties, tenants, rent units, bills, reminders, reports, and backups in one place."
+    />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/app-icon.png" />
     <style>
       :root {
-        --bg: #0d1117;
-        --text: #e6edf3;
-        --muted: #9aa4af;
-        --card: #161b22;
+        --bg: #0b0b0b;
+        --surface: #151515;
+        --card: #191919;
+        --text: #f5f5f5;
+        --muted: #b9b9b9;
         --border: rgba(255, 255, 255, 0.12);
-        --primary: #fb8c00;
+        --primary: #ff9800;
+        --secondary: #ffcc80;
+        --ink: #062f31;
       }
-      * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-          Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
         color: var(--text);
-        background:
-          radial-gradient(circle at top right, rgba(251, 140, 0, 0.16), transparent 42%),
-          radial-gradient(circle at bottom left, rgba(255, 204, 128, 0.1), transparent 40%),
-          var(--bg);
+        background: var(--bg);
+      }
+      a {
+        color: inherit;
       }
       .wrap {
-        width: min(1024px, 92vw);
+        width: min(1120px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 32px 0 56px;
       }
       .topbar {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         gap: 16px;
-        margin-bottom: 18px;
+        padding: 20px 0;
       }
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        color: var(--text);
-        font-weight: 700;
+        font-weight: 800;
       }
       .brand-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
       }
       .links {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
       }
-      .links a {
-        color: var(--text);
+      .links a,
+      .button-link {
         text-decoration: none;
         border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.03);
+        border-radius: 999px;
+        padding: 9px 14px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-size: 14px;
       }
       .hero {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 28px;
-      }
-      h1 { margin: 0 0 8px; font-size: 2.2rem; }
-      p { margin: 0; line-height: 1.65; }
-      .muted { color: var(--muted); }
-      .grid {
-        margin-top: 16px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 14px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.78fr);
+        align-items: center;
+        gap: 28px;
+        min-height: 78vh;
+        padding: 26px 0 34px;
       }
-      .item {
-        display: block;
-        text-decoration: none;
-        color: var(--text);
+      .eyebrow {
+        color: var(--secondary);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 10px 0 14px;
+        font-size: clamp(42px, 7vw, 78px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: clamp(18px, 2.1vw, 23px);
+        line-height: 1.5;
+        max-width: 680px;
+        margin: 0;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .primary-action {
+        background: var(--primary);
+        color: #0b0b0b;
+        border-color: var(--primary);
+        font-weight: 800;
+      }
+      .hero-shot {
+        width: 100%;
+        max-height: 720px;
+        object-fit: contain;
+        filter: drop-shadow(0 28px 50px rgba(0, 0, 0, 0.5));
+      }
+      .section {
+        padding: 44px 0;
+      }
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.05;
+      }
+      .section-copy {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 860px;
+        margin: 0;
+      }
+      .benefits {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 22px;
+      }
+      .benefit {
         background: var(--card);
         border: 1px solid var(--border);
-        border-radius: 14px;
+        border-radius: 12px;
         padding: 18px;
       }
-      .item h2 {
+      .benefit h3 {
         margin: 0 0 8px;
-        color: var(--primary);
-        font-size: 1.1rem;
+        color: var(--secondary);
+        font-size: 18px;
       }
-      .item p { color: var(--muted); }
-      .footer {
-        margin-top: 20px;
+      .benefit p {
         color: var(--muted);
-        font-size: 0.95rem;
+        line-height: 1.55;
+        margin: 0;
+      }
+      .feature-strip {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(220px, 1fr));
+        gap: 14px;
+        overflow-x: auto;
+        padding: 4px 0 16px;
+        margin-top: 24px;
+      }
+      .feature-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        min-width: 220px;
+      }
+      .feature-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 690 / 1457;
+        object-fit: cover;
+        background: #111;
+      }
+      .feature-card div {
+        padding: 14px;
+      }
+      .feature-card h3 {
+        margin: 0 0 6px;
+        color: var(--primary);
+        font-size: 17px;
+      }
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+      .billing-band {
+        display: grid;
+        grid-template-columns: minmax(270px, 0.82fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: center;
+        background: linear-gradient(135deg, #d71919, #ff9800);
+        border-radius: 14px;
+        padding: 24px;
+        color: #fff;
+      }
+      .billing-band img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+      }
+      .billing-band h2 {
+        color: #fff;
+      }
+      .billing-band p {
+        color: rgba(255, 255, 255, 0.88);
+      }
+      .legal-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .legal-grid a {
+        display: block;
+        text-decoration: none;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px;
+      }
+      .legal-grid strong {
+        display: block;
+        color: var(--primary);
+        margin-bottom: 6px;
+      }
+      .legal-grid span {
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .footer {
+        color: var(--muted);
+        padding: 28px 0 40px;
+        font-size: 14px;
+      }
+      @media (max-width: 860px) {
+        .hero,
+        .billing-band,
+        .benefits,
+        .legal-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          min-height: auto;
+          padding-top: 8px;
+        }
+        .hero-shot {
+          max-height: none;
+        }
       }
       @media (max-width: 640px) {
+        .wrap {
+          width: min(100% - 20px, 1120px);
+        }
         .topbar {
           align-items: flex-start;
           flex-direction: column;
+        }
+        .links a,
+        .button-link {
+          padding: 8px 12px;
+        }
+        .section {
+          padding: 34px 0;
+        }
+        .billing-band {
+          padding: 16px;
         }
       }
     </style>
@@ -114,6 +287,7 @@
           <span>Rentify</span>
         </div>
         <nav class="links" aria-label="Rentify pages">
+          <a href="#features">Features</a>
           <a href="https://ganeshbabu-hc.github.io/rentify-help/">Help</a>
           <a href="https://ganeshbabu-hc.github.io/rentify-privacy/">Privacy</a>
           <a href="https://ganeshbabu-hc.github.io/rentify-terms/">Terms</a>
@@ -121,32 +295,148 @@
       </header>
 
       <section class="hero">
-        <h1>Rentify</h1>
-        <p class="muted">
-          Property management app for owners and landlords.
-        </p>
-        <p style="margin-top: 8px;">
-          Manage properties, units, tenants, billing, reminders, reports, and backups.
-        </p>
+        <div>
+          <span class="eyebrow">Property management app</span>
+          <h1>Rentify keeps rental work organized.</h1>
+          <p class="lead">
+            Rentify helps property owners manage properties, rent units, tenants,
+            bills, reminders, maintenance requests, reports, and backups in one place.
+            It is built for owners who want less spreadsheet juggling and more clarity
+            every month.
+          </p>
+          <div class="hero-actions">
+            <a class="button-link primary-action" href="#features">Explore features</a>
+            <a class="button-link" href="https://ganeshbabu-hc.github.io/rentify-help/">Open help guide</a>
+          </div>
+        </div>
+        <img
+          class="hero-shot"
+          src="./assets/screens/rentify_intro_1.png"
+          alt="Rentify app dashboard showing property management overview"
+        />
       </section>
 
-      <section class="grid">
-        <a class="item" href="https://ganeshbabu-hc.github.io/rentify-help/">
-          <h2>Help Center</h2>
-          <p>Detailed user guide, setup instructions, and feature walkthroughs.</p>
-        </a>
-        <a class="item" href="https://ganeshbabu-hc.github.io/rentify-privacy/">
-          <h2>Privacy Policy</h2>
-          <p>How Rentify collects, uses, stores, and protects your data.</p>
-        </a>
-        <a class="item" href="https://ganeshbabu-hc.github.io/rentify-terms/">
-          <h2>Terms & Conditions</h2>
-          <p>Rules, billing terms, responsibilities, and legal usage conditions.</p>
-        </a>
+      <section class="section">
+        <h2>Why property owners need Rentify</h2>
+        <p class="section-copy">
+          Rental management becomes messy when tenant records, rent bills, payment
+          follow-ups, service charges, maintenance notes, and backups live in separate
+          places. Rentify brings those daily jobs together so you can understand what is
+          due, who paid, which unit needs attention, and what changed recently without
+          rebuilding the same notes every month.
+        </p>
+        <div class="benefits">
+          <article class="benefit">
+            <h3>One connected record</h3>
+            <p>
+              Link tenants with rent units and properties, track deposits, lease dates,
+              co-tenants, emergency contacts, and payment history from the same flow.
+            </p>
+          </article>
+          <article class="benefit">
+            <h3>Billing without repeat work</h3>
+            <p>
+              Generate monthly bills, include rent, maintenance, utilities, additional
+              services, partial payments, and invoice exports with less manual checking.
+            </p>
+          </article>
+          <article class="benefit">
+            <h3>Clarity for decisions</h3>
+            <p>
+              Use reports, reminders, recent activity, and insights to spot pending
+              payments, occupancy trends, regular payers, and units needing follow-up.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <h2>Everything a small property portfolio needs</h2>
+        <p class="section-copy">
+          Rentify is designed for property owners who manage the work themselves:
+          quick enough for daily updates, detailed enough for monthly billing, and safe
+          enough to keep backups ready when phones change.
+        </p>
+        <div class="feature-strip" aria-label="Rentify feature screenshots">
+          <article class="feature-card">
+            <img src="./assets/screens/rentify_intro_1.png" alt="Rentify home overview" />
+            <div>
+              <h3>All-in-one overview</h3>
+              <p>See properties, rent units, billing actions, and key stats from the home screen.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="./assets/screens/rentify_intro_2.png" alt="Rentify billing screen" />
+            <div>
+              <h3>Smart monthly billing</h3>
+              <p>Create bills, save drafts, track paid status, handle partial payments, and export invoices.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="./assets/screens/rentify_intro_3.png" alt="Rentify drawer with tenants units properties" />
+            <div>
+              <h3>Connected portfolio</h3>
+              <p>Keep tenants, rent units, owners, and properties linked so records stay consistent.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="./assets/screens/rentify_intro_4.png" alt="Rentify reports screen" />
+            <div>
+              <h3>Reports and reminders</h3>
+              <p>Review revenue trends, occupancy, top contributors, maintenance attention, and reminders.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="./assets/screens/rentify_intro_5.png" alt="Rentify backup screen" />
+            <div>
+              <h3>Backup and restore</h3>
+              <p>Use local and Google Drive backups, restore snapshots, and personalize app settings.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="billing-band">
+          <img
+            src="./assets/screens/rentify_intro_2.png"
+            alt="Rentify calculated monthly bill preview"
+          />
+          <div>
+            <h2>Built around the monthly rent cycle</h2>
+            <p class="section-copy">
+              Rentify helps you prepare bills with base rent, maintenance,
+              billable services, utility charges, service requests, and drafts. When
+              payments come in, you can record full or partial payments and keep tenant
+              history updated for future reference.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Official Rentify pages</h2>
+        <p class="section-copy">
+          Use these links for help, privacy, and terms information.
+        </p>
+        <div class="legal-grid">
+          <a href="https://ganeshbabu-hc.github.io/rentify-help/">
+            <strong>Help Center</strong>
+            <span>Feature guides, setup notes, and workflow help.</span>
+          </a>
+          <a href="https://ganeshbabu-hc.github.io/rentify-privacy/">
+            <strong>Privacy Policy</strong>
+            <span>How Rentify handles local data, Google sign-in, Drive backup, and billing data.</span>
+          </a>
+          <a href="https://ganeshbabu-hc.github.io/rentify-terms/">
+            <strong>Terms & Conditions</strong>
+            <span>Usage terms, responsibilities, premium billing, and restore behavior.</span>
+          </a>
+        </div>
       </section>
 
       <p class="footer">
-        © 2026 Rentify. All rights reserved.
+        © 2026 Rentify. Property management, simplified.
       </p>
     </main>
   </body>
