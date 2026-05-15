@@ -86,9 +86,10 @@
         font-size: 14px;
         line-height: normal;
       }
-      .links a.active {
+      .links a.active,
+      .links a[aria-current="page"] {
         border-color: rgba(255, 152, 0, 0.48);
-        background: rgba(255, 152, 0, 0.16);
+        background: rgba(255, 152, 0, 0.24);
         color: var(--secondary);
       }
       .page-intro {
@@ -132,7 +133,7 @@
         gap: 16px;
         margin-top: 22px;
       }
-      .card {
+      .doc-section {
         border-bottom: 1px solid var(--border);
         padding: 4px 0 24px;
       }
@@ -163,7 +164,7 @@
           align-items: flex-start;
           flex-direction: column;
         }
-        .page-intro, .card { padding: 8px 0 22px; }
+        .page-intro, .doc-section { padding: 8px 0 22px; }
         .page-intro p, p, li { font-size: 15px; }
       }
     </style>
@@ -181,7 +182,7 @@
         <nav class="links" aria-label="Rentify pages">
           <a href="../#features">Features</a>
           <a href="../help/">Help</a>
-          <a class="active" href="./">Privacy Policy</a>
+          <a class="active" aria-current="page" href="./">Privacy Policy</a>
           <a href="../terms/">Terms & Conditions</a>
         </nav>
       </header>
@@ -202,7 +203,7 @@
       </section>
 
       <section class="grid">
-        <article class="card">
+        <article class="doc-section">
           <h2>1. What Rentify Is</h2>
           <p>
             Rentify is a property management app used to manage owners, properties, rent units,
@@ -210,7 +211,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>2. Information You Provide</h2>
           <ul>
             <li>Owner, property, rent unit, tenant, and billing records</li>
@@ -221,7 +222,7 @@
           </ul>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>3. Authentication & Identity</h2>
           <p>
             Rentify may allow sign-in with Google. When Google sign-in is used, the app may access
@@ -230,7 +231,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>4. Storage & Backup</h2>
           <p>
             Rentify stores app data locally on the device. If the user enables backup features,
@@ -244,7 +245,7 @@
           </ul>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>5. Purchases</h2>
           <p>
             Rentify may offer Premium features through Google Play Billing. Purchase validation and
@@ -253,7 +254,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>6. How Data Is Used</h2>
           <ul>
             <li>To operate the property management features inside the app</li>
@@ -264,7 +265,7 @@
           </ul>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>7. Data Sharing</h2>
           <p>
             Rentify does not sell personal data. Data may be processed by platform services used by the app,
@@ -273,7 +274,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>8. User Control</h2>
           <ul>
             <li>Users can edit or delete many records directly within the app</li>
@@ -283,14 +284,14 @@
           </ul>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>9. Children</h2>
           <p>
             Rentify is not intended for children. It is designed for property management and administrative use.
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>10. Security</h2>
           <p>
             Reasonable efforts are made to protect locally stored information and user-initiated backups.
@@ -298,7 +299,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>11. Changes to This Policy</h2>
           <p>
             This page may be updated from time to time to reflect feature, compliance, or operational changes.
@@ -306,7 +307,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="doc-section">
           <h2>12. Contact</h2>
           <p>
             For questions about this policy or the app, please contact the publisher through the
